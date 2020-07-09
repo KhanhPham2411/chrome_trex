@@ -184,8 +184,8 @@ def setup_logger(logger_name, log_file, level=logging.INFO):
     l.addHandler(streamHandler)    
 
 
-log_file_name_1 = time.strftime("./logs/%Y-%m-%d_%H:%M:%S_brief.log")
-log_file_name_2 = time.strftime("./logs/%Y-%m-%d_%H:%M:%S_survival.log")
+log_file_name_1 = time.strftime("./logs/%Y-%m-%d_%H_%M_%S_brief.log")
+log_file_name_2 = time.strftime("./logs/%Y-%m-%d_%H_%M_%S_survival.log")
 
 setup_logger('log1', log_file_name_1)
 setup_logger('log2', log_file_name_2)
