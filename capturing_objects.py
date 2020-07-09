@@ -38,7 +38,7 @@ def find_game_position(sct, threshold):
 
     landscape = {}
     # mac dinh la se hien thi o screenshot 1, du chung ta co 1 hay nhieu man hinh
-    monitor = sct.monitors[1]
+    monitor = sct.monitors[0]
     image = np.array(sct.grab(monitor))[:,:,:3]
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     res = cv2.matchTemplate(gray_image, dino_template, cv2.TM_CCOEFF_NORMED)
@@ -136,7 +136,7 @@ def play_game(parameters_set):
             reset_game_2(LANDSCAPE)
         else:
             reset_game()
-        landscape = get_game_landscape_and_set_focus_or_die(sct, .8)
+        landscape = get_game_landscape_and_set_focus_or_die(sct)
         LANDSCAPE = landscape.copy()
         start_game()
 
